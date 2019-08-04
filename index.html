@@ -1,16 +1,399 @@
 <!doctype html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <link rel="alternate" type="application/atom+xml" title="Temoto space feed" href="./feed.atom.xml">
   <title>Temoto space</title>
-  <style>/* put your style rules here */
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>/*
+Based on design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #fff url(/images/img01.jpg) repeat-x;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #444;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+input, textarea, select {
+	font-weight: normal;
+	font-size: 12pt;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+	font-weight: normal;
+	color: #008c00;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 25pt;
+}
+
+h2 {
+	font-size: 16pt;
+}
+
+h3 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+blockquote { font-style: italic; }
+
+a { color: #008c00; }
+a:hover { text-decoration: none; }
+
+img { border: none; }
+
+img.left {
+	float: left;
+	margin: 0 11pt 0 0;
+}
+img.right {
+	float: left;
+	margin: 0 0 0 11pt;
+}
+
+.f-left { float: left; }
+.f-right { float: right; }
+
+.clearer {
+    clear: both;
+    height: 1px;
+    line-height: 1px;
+}
+
+ol.clean, ul.clean {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.t-left { text-align: left; }
+.t-right { text-align: right; }
+
+/* Header */
+
+#header {
+	width: 676pt;
+	height: 139pt;
+	background: url(/images/img07.jpg);
+	margin: 0 auto;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 204pt;
+}
+
+#logo .header-1, #logo .header-2 {
+	margin: 0;
+	padding: 0;
+	text-transform: lowercase;
+}
+
+#logo .header-1 {
+	padding-top: 14pt;
+	text-align: center;
+	font-size: 35pt;
+	color: #299762;
+}
+
+#logo a .header-1 { color: #299762; }
+
+#logo .header-2 {
+	text-align: center;
+	letter-spacing: -1px;
+	font-size: 21pt;
+	color: #299762;
+}
+
+#logo a .header-2 { color: #299762; }
+
+#logo a { text-decoration: none; }
+
+/* Menu */
+
+#menu {
+	float: right;
+	height: 139pt;
+	margin: 0;
+	list-style: none;
+}
+
+#menu li { display: inline; }
+
+#menu a {
+	display: block;
+	float: left;
+	height: 66pt;
+	padding: 44pt 14pt 0 14pt;
+	text-align: center;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 1.6em;
+	color: #ffffff;
+}
+
+#menu a:hover {
+	height: 118pt;
+	background: url(/images/img08.jpg) repeat-x top left;
+}
+
+#menu .current_page_item a {
+	background: url(/images/img08.jpg) repeat-x top left;
+	color: #ffffff;
+}
+
+/* Page */
+
+#page {
+	width: 90%;
+    min-width: 600px;
+    max-width: 1400px;
+	margin: 0 auto;
+	padding-top: 14pt;
+}
+
+#latest-post {
+	float: left;
+	width: 419pt;
+	padding: 0 14pt 0 7pt;
+}
+
+#recent-posts {
+	float: right;
+	width: 266pt;
+	background: url(/images/img03.gif) repeat-y;
+	padding: 0 7pt 14pt 14pt;
+}
+
+#recent-posts .entry {
+	background: url(/images/img04.gif) repeat-x left bottom;
+}
+
+.post .title { margin: 0; }
+
+.post .meta {
+	margin: 0;
+	padding-bottom: 7pt;
+	line-height: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #bababa;
+}
+
+.post .meta a { color: #bababa; }
+
+.post .entry {
+	margin-bottom: 7pt;
+	padding-bottom: 3pt;
+}
+
+.menu {
+    margin-right: 230px;
+}
+
+/* Sidebar */
+
+#sidebar {
+	clear: both;
+	width: 676pt;
+	background: url(/images/img04.gif) repeat-x left top;
+	color: #008c00;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+	display: block;
+	float: left;
+	width: 147pt;
+	padding: 11pt;
+}
+
+#sidebar li ul { line-height: 1.8em; }
+
+#sidebar li li {
+	display: list-item;
+	float: none;
+	width: auto;
+	padding: 0;
+}
+
+#sidebar h2 {
+	margin: 0 0 11pt 0;
+	color: #008c00;
+}
+
+#sidebar a {
+	text-decoration: none;
+	color: #008c00;
+}
+
+#sidebar a:hover { text-decoration: underline; }
+
+aside.about-me {
+    float: right;
+    margin: 0 0 30px 30px;
+    max-width: 400px;
+}
+
+img.photo-100 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #008c00;
+    padding: 5px;
+}
+
+img.photo-200 {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #008c00;
+    padding: 6px;
+}
+
+/* Container for photo-100 */
+.height-112 {
+    height: 112px;
+}
+
+/* Footer */
+
+#footer-bg { background: url(/images/img06.gif) repeat-x; }
+
+#footer {
+	width: 90%;
+	height: 60px;
+	margin: 40px auto 0 auto;
+	padding: 6px 0;
+	position: relative;
+}
+
+#footer p {
+	margin: 0;
+	padding: 11pt 0;
+}
+
+#links { float: right; }
+
+.articles { list-style-type: disc; }
+.articles > li { margin-bottom: 1%; }
 </style>
 </head>
 <body>
-<ul class="post-list">
-	<li>
-		<time datetime="2019-08-04">2019-08-04</time> - <a href="./a/first.html">First Post</a>
-	</li>
-	</ul>
+  <div id="header">
+  	<div id="logo">
+  		<p class="header-1"><a href="/">завтра</a></p>
+  		<p class="header-2">будет лучше</p>
+  	</div>
+  	<ul id="menu">
+  		<li><a title=El>.</a>
+  		<li><a title=lip>.</a>
+  		<li><a title=sis>.</a>
+  	</ul>
+  </div>
+<div id="page">
+	<div id="content">
+		<h1>Шепелев Сергей, программист</h1>
+		<aside class="about-me vcard">
+			<a class="url" href="https://plus.google.com/109869205442495270563?rel=author" rel="me">
+				<img class="photo photo-200"
+					src="https://lh6.googleusercontent.com/-0tA2B1FBAwE/USyzpBsFKJI/AAAAAAAAF5Y/w4qM7aZWdSU/s200/photo.jpg"
+					alt="Шепелев Сергей">
+			</a>
+			<h2>Контакты</h2>
+			<h3 class="fn">Шепелев Сергей Александрович</h3>
+			<ul class="clean">
+				<li><span lang="en">Email</span> (<span lang="ru">эл. почта</span>): <strong
+						class="email">temotor@gmail.com</strong></li>
+				<li><span>Telegram</span>: <a href="https://t.me/temotor"><strong class="telegram">@temotor</strong></a>
+				</li>
+			</ul>
+
+			<h3>Пара слов обо мне</h3>
+			<p class="note">Я люблю программировать, путешествовать, параплан, велосипед, варить мыло, батут,
+				скалолазание, смотреть на огонь, разбираться как всё работает.</p>
+			<p class="note"><q>Give it a second, it's going to space!</q><br>– Louis CK.</p>
+		</aside>
+		<ul class="menu">
+			<li><a lang="en" href="cv-eng.txt">CV in English</a></li>
+			<li><a lang="ru" href="resume-rus.txt">Резюме на русском</a></li>
+			<li><a href="https://github.com/temoto" rel="me">Мой код (github)</a></li>
+			<li><span class=tag>[программирование]</span> <a
+					href="https://sites.google.com/site/freecspapers/russian">Книги по Computer Science на русском</a>
+			</li>
+			<li><a href="http://www.google.com/profiles/temotor" rel="me">Моя страница на Гугле</a>. Там же лента
+				новостей, фотки, контакты.</li>
+			<li><span class=tag>[программирование]</span> <a href="flow-spec.rst" lang=en>Flow programming language
+					specification</a></li>
+			<li>Библиотека для высоконагруженной работы с сетью на Python: <a href="http://eventlet.net/"
+					lang="en">Eventlet</a></li>
+		</ul>
+
+		<h2>Услуги</h2>
+		<p>Готов поделиться опытом в разработке интернет проектов за деньги.</p>
+		<ul>
+			<li>Консультирую по вопросам: выбор хостинга, планирование нагрузки и серверных ресурсов</li>
+			<li>архитектура новых проектов</li>
+			<li>рост и устранение проблем в существующих проектах</li>
+			<li>обучение Unix администраторов, программистов и тестировщиков</li>
+			<li>основы веб-аналитики</li>
+		</ul>
+
+		<h2>Полезные статьи</h2>
+		<ol class="articles">
+			<li><time datetime="2009-11-16">2009-11-16</time> <a href="./a/kak-rabotayut-domeny.html">Как работают домены</a>
+				<br>[<span class=tag>интернет</span>,<span class=tag>технологии</span>]</li>
+			<li><time datetime="2008-07-15">2008-07-15</time> <a href="./a/db-enum-test-str-vs-int.html">Сравнение скорости баз данных с численными и строковыми перечислениями</a>
+				<br>[<span class=tag>программирование</span>,<span class=tag>python</span>,<span class=tag>sql</span>]</li>
+			<li><time datetime="2008-04-24">2008-04-24</time> <a href="./a/python-mysql-windows-grabli.html">Python и MySQL / Windows - Первые грабли</a>
+				<br>[<span class=tag>программирование</span>]</li>
+			</ol>
+
+		<h2>Остальное</h2>
+		<ul class="articles">
+			<li><time datetime="2012-05-11">2012-05-11</time> <a href="./b/heroshi-trahatsa-nado-pod-prodigy.html">Трахаться надо – под Prodigy!</a>
+				<br>[<span class=tag>Fido</span>,<span class=tag>народное</span>]</li>
+			<li><time datetime="2010-11-22">2010-11-22</time> <a href="./b/filery-i-efiry.html">Филеры и Эфиры</a>
+				<br>[<span class=tag>загоны</span>]</li>
+			<li><time datetime="2008-03-15">2008-03-15</time> <a href="./b/problema-prodavtza.html">Проблема продавца</a>
+				<br>[<span class=tag>интересное рядом</span>,<span class=tag>мысли вслух</span>,<span class=tag>протест</span>]</li>
+			<li><time datetime="2007-12-21">2007-12-21</time> <a href="./b/microsoft-torgovlya-ili-razrabotka.html">Microsoft – торговля или разработка</a>
+				<br>[<span class=tag>мысли вслух</span>,<span class=tag>протест</span>]</li>
+			<li><time datetime="2007-11-07">2007-11-07</time> <a href="./b/o-dobryh-bogah.html">О добрых богах</a>
+				<br>[<span class=tag>загоны</span>]</li>
+			<li><time datetime="2007-10-08">2007-10-08</time> <a href="./b/vagonnye-teleporty.html">Вагонные телепорты</a>
+				<br>[<span class=tag>загоны</span>]</li>
+			</ul>
+	</div><!-- end #content -->
+</div><!-- end #page -->
+<div id="footer-bg">
+	<div id="footer">
+		<p id="legal">Based on Boorish design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+	</div>
+</div>
 </body></html>

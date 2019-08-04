@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://temoto.github.io/sitemap.txt

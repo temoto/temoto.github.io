@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="alternate" type="application/atom+xml" title="Temoto space feed" href="../feed.atom.xml">
+  <title>Проблема продавца - Temoto space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>/*
+Based on design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #fff url(/images/img01.jpg) repeat-x;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	color: #444;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+input, textarea, select {
+	font-weight: normal;
+	font-size: 12pt;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+	font-weight: normal;
+	color: #008c00;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 25pt;
+}
+
+h2 {
+	font-size: 16pt;
+}
+
+h3 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+blockquote { font-style: italic; }
+
+a { color: #008c00; }
+a:hover { text-decoration: none; }
+
+img { border: none; }
+
+img.left {
+	float: left;
+	margin: 0 11pt 0 0;
+}
+img.right {
+	float: left;
+	margin: 0 0 0 11pt;
+}
+
+.f-left { float: left; }
+.f-right { float: right; }
+
+.clearer {
+    clear: both;
+    height: 1px;
+    line-height: 1px;
+}
+
+ol.clean, ul.clean {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.t-left { text-align: left; }
+.t-right { text-align: right; }
+
+/* Header */
+
+#header {
+	width: 676pt;
+	height: 139pt;
+	background: url(/images/img07.jpg);
+	margin: 0 auto;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 204pt;
+}
+
+#logo .header-1, #logo .header-2 {
+	margin: 0;
+	padding: 0;
+	text-transform: lowercase;
+}
+
+#logo .header-1 {
+	padding-top: 14pt;
+	text-align: center;
+	font-size: 35pt;
+	color: #299762;
+}
+
+#logo a .header-1 { color: #299762; }
+
+#logo .header-2 {
+	text-align: center;
+	letter-spacing: -1px;
+	font-size: 21pt;
+	color: #299762;
+}
+
+#logo a .header-2 { color: #299762; }
+
+#logo a { text-decoration: none; }
+
+/* Menu */
+
+#menu {
+	float: right;
+	height: 139pt;
+	margin: 0;
+	list-style: none;
+}
+
+#menu li { display: inline; }
+
+#menu a {
+	display: block;
+	float: left;
+	height: 66pt;
+	padding: 44pt 14pt 0 14pt;
+	text-align: center;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 1.6em;
+	color: #ffffff;
+}
+
+#menu a:hover {
+	height: 118pt;
+	background: url(/images/img08.jpg) repeat-x top left;
+}
+
+#menu .current_page_item a {
+	background: url(/images/img08.jpg) repeat-x top left;
+	color: #ffffff;
+}
+
+/* Page */
+
+#page {
+	width: 90%;
+    min-width: 600px;
+    max-width: 1400px;
+	margin: 0 auto;
+	padding-top: 14pt;
+}
+
+#latest-post {
+	float: left;
+	width: 419pt;
+	padding: 0 14pt 0 7pt;
+}
+
+#recent-posts {
+	float: right;
+	width: 266pt;
+	background: url(/images/img03.gif) repeat-y;
+	padding: 0 7pt 14pt 14pt;
+}
+
+#recent-posts .entry {
+	background: url(/images/img04.gif) repeat-x left bottom;
+}
+
+.post .title { margin: 0; }
+
+.post .meta {
+	margin: 0;
+	padding-bottom: 7pt;
+	line-height: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #bababa;
+}
+
+.post .meta a { color: #bababa; }
+
+.post .entry {
+	margin-bottom: 7pt;
+	padding-bottom: 3pt;
+}
+
+.menu {
+    margin-right: 230px;
+}
+
+/* Sidebar */
+
+#sidebar {
+	clear: both;
+	width: 676pt;
+	background: url(/images/img04.gif) repeat-x left top;
+	color: #008c00;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+	display: block;
+	float: left;
+	width: 147pt;
+	padding: 11pt;
+}
+
+#sidebar li ul { line-height: 1.8em; }
+
+#sidebar li li {
+	display: list-item;
+	float: none;
+	width: auto;
+	padding: 0;
+}
+
+#sidebar h2 {
+	margin: 0 0 11pt 0;
+	color: #008c00;
+}
+
+#sidebar a {
+	text-decoration: none;
+	color: #008c00;
+}
+
+#sidebar a:hover { text-decoration: underline; }
+
+aside.about-me {
+    float: right;
+    margin: 0 0 30px 30px;
+    max-width: 400px;
+}
+
+img.photo-100 {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #008c00;
+    padding: 5px;
+}
+
+img.photo-200 {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #008c00;
+    padding: 6px;
+}
+
+/* Container for photo-100 */
+.height-112 {
+    height: 112px;
+}
+
+/* Footer */
+
+#footer-bg { background: url(/images/img06.gif) repeat-x; }
+
+#footer {
+	width: 90%;
+	height: 60px;
+	margin: 40px auto 0 auto;
+	padding: 6px 0;
+	position: relative;
+}
+
+#footer p {
+	margin: 0;
+	padding: 11pt 0;
+}
+
+#links { float: right; }
+
+.articles { list-style-type: disc; }
+.articles > li { margin-bottom: 1%; }
+</style>
+</head>
+<body>
+  <div id="header">
+  	<div id="logo">
+  		<p class="header-1"><a href="/">завтра</a></p>
+  		<p class="header-2">будет лучше</p>
+  	</div>
+  	<ul id="menu">
+  		<li><a title=El>.</a>
+  		<li><a title=lip>.</a>
+  		<li><a title=sis>.</a>
+  	</ul>
+  </div>
+<div id=page>
+<div id=content class=content>
+<article>
+  <header>
+    <h1>Проблема продавца</h1>
+    <div class="info">
+      <time datetime="2008-03-15">2008-03-15</time> &mdash;
+      <a href="../tags/интересное рядом.html">интересное рядом</a>,
+      <a href="../tags/мысли вслух.html">мысли вслух</a>,
+      <a href="../tags/протест.html">протест</a>
+    </div>
+    <div class="nav"><a href="/">На главную</a></div>
+  </header>
+  <section>
+  <p>Небольшое вступление. Этот текст не про фирму микрософт, не про открытые и закрытые программы. Теплее &#151; про экономику. Еще точнее &#151; про современное общество, как я вижу одну из наших больших проблем. Пожалуйста, постарайтесь взглянуть на всё написанное ниже как можно шире.</p>
+<p>На самом деле это относится ко всей области программного обеспечения, но взять ту же микрософт. (<small>И что я так к ним прицепился...</small>) Десятки лет закрытого развития, борьбы с пиратами. А рядом открытые проекты развивались совместно. И перегнали. Заставили задуматься. В фильме &laquo;Игры разума&raquo; главный герой, если я не ошибаюсь, получил нобелевскую премию в экономике за поправку с известному закону. И, если я не ошибаюсь, поправка в том, что оптимальное решение - то, что лучше для себя <strong>и для группы</strong>. (<small>выделена его поправка</small>) Это к тому, что <em>общее благо раньше или позже перевешивает монополию</em>.</p>
+<p>Продавцов можно даже частично оправдать. Они просто не в состоянии настолько же адекватно оценить потребности общества, как само общество. Поэтому и предлагаемые ими решения, при всей нацеленности решать проблемы потребителя, за которую, мы, казалось бы, и платим, на самом деле просто не могут быть полностью нацелены на эти самые проблемы. Это теория. На практике &laquo;за&raquo; есть всяческие опросы, тестирования и &laquo;против&raquo; - сугубо коммерческая суть продавца, которой по большому счету пофиг насколько решены реальные проблемы, лишь бы пользователь &laquo;купил ещё&raquo;.</p>
+<p>С другой стороны, продавец предлагает востребованный рынком продукт. А общество само себе продукта, решения не предлагает. Отчасти потому что есть ожидание решения сверху, опять же, воспитанное веками. Отчасти потому что нет инструмента для решения проблемы (у продавца есть инструмент для создания продукта). Отчасти потому что нет осознания того какие проблемы нужно решать. Отчасти потому что нет согласованности в действиях. Причин масса, вывод один - мы не решаем наши проблемы. Мы хотим купить решение. И в этом смысле продавец представляет из себя благо, потому что четко показывает проблему и предлагает её решение.</p>
+<p>Кого я называю продавцом. Ну, например, тот же заезженный микрософт в ПО. На работе продавец - начальство. Наоборот? Покупают время? Хрен! Нам продают корпоративную политику, но это ерунда. Нам продают занятость. Вот это действительно страшно. Самый большой и страшный продавец-монополист, это, конечно, государство, страна в которой мы живем. То есть продавцом в этом тексте я называю того, кто говорит "у вас есть такая-то проблема, платите нам столько-то и мы ее решим".</p>
+<p>И проблему продавца я вижу в том, что почти никогда не решается проблема (см. оправдание продавца). Просто поверх нее создается новый слой, новая условность, которая позволяет успокоиться. Здесь бы очень хорошо привести пару примеров, но что-то не приходит. То есть я не против продавца лично. Я против концепции внешнего анализа проблемы. Проблему нужно решать изнутри, для этого продавец должен предоставить нам инструменты, а не готовое решение.</p>
+<p>Я не хочу никого менять, я просто хочу показать людям, что можно иначе. И, хотя, до сих пор всем нравились те или иные инновации &laquo;изнутри&raquo;, выбор остается личным делом каждого. Выбор простой &#151; покупать чужое видение проблемы и решение или осознать проблему, взять в руки инструмент и работать.</p>
+<p>О том, почему инструмент должен быть бесплатным, доступным и свободным &#151; следующая статья.</p>
+<p>На размышления натолкнул пост <a href="http://steckinc.livejournal.com/72720.html">steckinc - Деньги</a>.</p>
+<p>P.S.: я был бы невыразимо благодарен за стиллистические правки. Возможно, кто-нибудь из читающих знает как нужно правильно и красиво строить текст.</p>
+</section>
+</article>
+</div></div><div id="footer-bg">
+	<div id="footer">
+		<p id="legal">Based on Boorish design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+	</div>
+</div>
+</body></html>
