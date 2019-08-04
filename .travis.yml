@@ -1,0 +1,13 @@
+cache:
+  directories:
+  - $HOME/bin
+language: go
+
+branches:
+  except:
+  - master
+git:
+  depth: false
+
+install: $HOME/bin/gostatic --version || GOBIN=$HOME/bin go get github.com/piranha/gostatic
+script: git fetch && ./build

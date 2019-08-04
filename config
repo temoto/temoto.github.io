@@ -1,0 +1,28 @@
+TEMPLATES = site.tmpl
+SOURCE = src
+OUTPUT = output
+TITLE = Temoto space
+URL = https://temoto.github.io
+AUTHOR = Temoto
+
+a/*.md:
+	config
+	ext .html
+	tags tags/*.tag
+	markdown
+	template post
+	template page
+
+*.tag: a/*.md
+	ext .html
+	template tag
+	markdown
+	template page
+
+feed.atom.xml: a/*.md
+	inner-template
+
+index.html: a/*.md
+	config
+	inner-template
+	template page

@@ -1,0 +1,50 @@
+#!/bin/bash
+base="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+set -eu
+
+main() {
+  cd "$base"
+  rm -rf "output" # allows worktree prune
+  git worktree prune
+  git worktree add -f -B master "output" origin/master
+  rm -rf output/* # sorry this is needed to propagate deleted static files
+  touch "output/.nojekyll"
+  gostatic -f config
+
+  cd "output"
+  git status
+  # show diff but also check untracked files
+  if git diff --exit-code && [[ -z "$(git status -s)" ]] ; then
+    echo "no changes" >&2
+    exit 0
+  fi
+  if [[ -n "${CI:-}" ]] ; then
+    local branch="$(git symbolic-ref --short HEAD)"
+    echo "branch: $branch" >&2
+    [[ "$branch" != "source" ]] && return 0
+  elif [[ -t 0 ]] ; then
+    confirm "Deploy? [yN] " || return 0
+  fi
+
+  git add --all .
+  git commit -m auto
+
+  cd "$base"
+  git push origin master source
+}
+
+confirm() {
+  local reply
+  local prompt="$1"
+  read -n1 -p "$prompt" -t13 reply >&2
+  echo "" >&2
+  local rc=0
+  local default_y=" \[Yn\] $"
+  if [[ -z "$reply" ]] && [[ "$prompt" =~ $default_y ]] ; then
+    reply="y"
+  fi
+  [[ "$reply" != "y" ]] && rc=1
+  return $rc
+}
+
+main

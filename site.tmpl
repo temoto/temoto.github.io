@@ -1,0 +1,48 @@
+{{ define "header" -}}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="alternate" type="application/atom+xml" title="{{ html .Site.Other.Title }} feed" href="{{ .Rel "feed.atom.xml" }}">
+  <title>{{ .Site.Other.Title }}{{ if .Title }}: {{ .Title }}{{ end }}</title>
+  <style>{{- exec "cat" "src/static/style.css" -}}</style>
+</head>
+<body>
+{{ end }}
+
+{{ define "footer" -}}
+</body></html>
+{{- end }}
+
+{{ define "date" -}}
+<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "2006-01-02" }}</time>
+{{- end }}
+
+{{ define "page" -}}
+{{ template "header" . -}}
+  {{ .Content -}}
+{{ template "footer" . -}}
+{{- end }}
+
+{{ define "post" -}}
+<article>
+  <header>
+    <h1>{{ .Title }}</h1>
+    <div class="info">
+      {{ template "date" .Date }} &mdash;
+      {{- range $i, $t := .Tags }}{{if $i}},{{end}}
+      <a href="../tags/{{ $t }}.html">{{ $t }}</a>{{ end }}
+    </div>
+  </header>
+  <section>
+  {{ .Content -}}
+  </section>
+</article>
+{{- end }}
+
+{{ define "tag" -}}
+# Pages tagged with {{ .Title }}
+{{ range .Site.Pages.WithTag .Title -}}
+- [{{ .Title }}](../{{ .Url }})
+{{ end -}}
+{{- end }}
