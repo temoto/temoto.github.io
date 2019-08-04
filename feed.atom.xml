@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:thr="http://purl.org/syndication/thread/1.0">
+  <id>https://temoto.github.io</id>
+  <title>Temoto space</title>
+  <updated>2019-08-04T00:00:00Z</updated>
+  <author><name>Temoto</name></author>
+  <link href="https://temoto.github.io" rel="alternate"></link>
+  <generator uri="https://github.com/piranha/gostatic">gostatic</generator>
+
+<entry>
+  <id>a/first.html</id>
+  <author><name>Temoto</name></author>
+  <title type="html">First Post</title>
+  <published>2019-08-04T00:00:00Z</published>
+  <category term="well"></category><category term="initial"></category>
+  <link href="https://temoto.github.io/a/first.html" rel="alternate"></link>
+  <content type="html">
+  &lt;p&gt;check this out yo&lt;/p&gt;
+</content>
+</entry>
+</feed>
