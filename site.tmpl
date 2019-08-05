@@ -1,16 +1,33 @@
 {{ define "header" -}}
 <!doctype html>
-<html>
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <link rel="alternate" type="application/atom+xml" title="{{ html .Site.Other.Title }} feed" href="{{ .Rel "feed.atom.xml" }}">
-  <title>{{ .Site.Other.Title }}{{ if .Title }}: {{ .Title }}{{ end }}</title>
-  <style>{{- exec "cat" "src/static/style.css" -}}</style>
+  <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Other.Title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>{{- exec "cat" "src/boorish.css" -}}</style>
 </head>
 <body>
+  <div id="header">
+  	<div id="logo">
+  		<p class="header-1"><a href="/">завтра</a></p>
+  		<p class="header-2">будет лучше</p>
+  	</div>
+  	<ul id="menu">
+  		<li><a title=El>.</a>
+  		<li><a title=lip>.</a>
+  		<li><a title=sis>.</a>
+  	</ul>
+  </div>
 {{ end }}
 
 {{ define "footer" -}}
+<div id="footer-bg">
+	<div id="footer">
+		<p id="legal">Based on Boorish design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+	</div>
+</div>
 </body></html>
 {{- end }}
 
@@ -25,6 +42,8 @@
 {{- end }}
 
 {{ define "post" -}}
+<div id=page>
+<div id=content class=content>
 <article>
   <header>
     <h1>{{ .Title }}</h1>
@@ -33,11 +52,13 @@
       {{- range $i, $t := .Tags }}{{if $i}},{{end}}
       <a href="../tags/{{ $t }}.html">{{ $t }}</a>{{ end }}
     </div>
+    <div class="nav"><a href="/">На главную</a></div>
   </header>
   <section>
   {{ .Content -}}
   </section>
 </article>
+</div></div>
 {{- end }}
 
 {{ define "tag" -}}

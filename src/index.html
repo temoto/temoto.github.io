@@ -1,8 +1,68 @@
 ----
-<ul class="post-list">
-	{{ range .Site.Pages.Children "a/" -}}
-	<li>
-		{{ template "date" .Date }} - <a href="{{ $.Rel .Url }}">{{ .Title }}</a>
-	</li>
-	{{ end -}}
-</ul>
+<div id="page">
+	<div id="content">
+		<h1>Шепелев Сергей, программист</h1>
+		<aside class="about-me vcard">
+			<a class="url" href="https://plus.google.com/109869205442495270563?rel=author" rel="me">
+				<img class="photo photo-200"
+					src="https://lh6.googleusercontent.com/-0tA2B1FBAwE/USyzpBsFKJI/AAAAAAAAF5Y/w4qM7aZWdSU/s200/photo.jpg"
+					alt="Шепелев Сергей">
+			</a>
+			<h2>Контакты</h2>
+			<h3 class="fn">Шепелев Сергей Александрович</h3>
+			<ul class="clean">
+				<li><span lang="en">Email</span> (<span lang="ru">эл. почта</span>): <strong
+						class="email">temotor@gmail.com</strong></li>
+				<li><span>Telegram</span>: <a href="https://t.me/temotor"><strong class="telegram">@temotor</strong></a>
+				</li>
+			</ul>
+
+			<h3>Пара слов обо мне</h3>
+			<p class="note">Я люблю программировать, путешествовать, параплан, велосипед, варить мыло, батут,
+				скалолазание, смотреть на огонь, разбираться как всё работает.</p>
+			<p class="note"><q>Give it a second, it's going to space!</q><br>– Louis CK.</p>
+		</aside>
+		<ul class="menu">
+			<li><a lang="en" href="cv-eng.txt">CV in English</a></li>
+			<li><a lang="ru" href="resume-rus.txt">Резюме на русском</a></li>
+			<li><a href="https://github.com/temoto" rel="me">Мой код (github)</a></li>
+			<li><span class=tag>[программирование]</span> <a
+					href="https://sites.google.com/site/freecspapers/russian">Книги по Computer Science на русском</a>
+			</li>
+			<li><a href="http://www.google.com/profiles/temotor" rel="me">Моя страница на Гугле</a>. Там же лента
+				новостей, фотки, контакты.</li>
+			<li><span class=tag>[программирование]</span> <a href="flow-spec.rst" lang=en>Flow programming language
+					specification</a></li>
+			<li>Библиотека для высоконагруженной работы с сетью на Python: <a href="http://eventlet.net/"
+					lang="en">Eventlet</a></li>
+		</ul>
+
+		<h2>Услуги</h2>
+		<p>Готов поделиться опытом в разработке интернет проектов за деньги.</p>
+		<ul>
+			<li>Консультирую по вопросам: выбор хостинга, планирование нагрузки и серверных ресурсов</li>
+			<li>архитектура новых проектов</li>
+			<li>рост и устранение проблем в существующих проектах</li>
+			<li>обучение Unix администраторов, программистов и тестировщиков</li>
+			<li>основы веб-аналитики</li>
+		</ul>
+
+		<h2>Полезные статьи</h2>
+		<ol class="articles">
+			{{ range .Site.Pages.Children "a/" -}}
+			<li>{{ template "date" .Date }} <a href="{{ $.Rel .Url }}">{{ .Title }}</a>
+				<br>[{{- range $i, $t := .Tags }}{{if $i}},{{end -}}
+				<span class=tag>{{ $t }}</span>{{ end -}} ]</li>
+			{{ end -}}
+		</ol>
+
+		<h2>Остальное</h2>
+		<ul class="articles">
+			{{ range .Site.Pages.Children "b/" -}}
+			<li>{{ template "date" .Date }} <a href="{{ $.Rel .Url }}">{{ .Title }}</a>
+				<br>[{{- range $i, $t := .Tags }}{{if $i}},{{end -}}
+				<span class=tag>{{ $t }}</span>{{ end -}} ]</li>
+			{{ end -}}
+		</ul>
+	</div><!-- end #content -->
+</div><!-- end #page -->

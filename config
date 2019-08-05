@@ -5,7 +5,12 @@ TITLE = Temoto space
 URL = https://temoto.github.io
 AUTHOR = Temoto
 
-a/*.md:
+404.md: boorish.css
+  ext .html
+  markdown
+  template page
+
+a/*.md: boorish.css
 	config
 	ext .html
 	tags tags/*.tag
@@ -13,7 +18,15 @@ a/*.md:
 	template post
 	template page
 
-*.tag: a/*.md
+b/*.md: boorish.css
+	config
+	ext .html
+	tags tags/*.tag
+	markdown
+	template post
+	template page
+
+*.tag: boorish.css a/*.md
 	ext .html
 	template tag
 	markdown
@@ -22,7 +35,7 @@ a/*.md:
 feed.atom.xml: a/*.md
 	inner-template
 
-index.html: a/*.md
+index.html: boorish.css a/*.md
 	config
 	inner-template
 	template page
